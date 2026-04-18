@@ -47,7 +47,7 @@ Access the complete dataset from: [MultiHateClip: A Multilingual Benchmark Datas
 
 ## 🧠 Method Overview
 <p align="center"> 
-  <img src="images/framework.png" width="85%" /> 
+  <img src="image/framework.png" width="85%" /> 
 </p>
 
 SAGE abandons traditional static fusion in favor of a dynamic, profile-centric paradigm that mimics human cognitive arbitration. 
