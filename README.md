@@ -1,6 +1,6 @@
-# 🚀 SAGE: Synergistic Adaptive Gating of Experts
+# 🚀 SAGE: Synergistic Adaptive Gating of Experts for Hateful Video Detection
 
-> **SAGE** is a multi-modal hateful video detection framework that dynamically fuses heterogeneous modality experts via **synergistic adaptive gating**, enabling robust and interpretable decision-making across text, audio, and visual signals.
+> With the rise of short-video platforms, hate speech has evolved from static text and memes into more covert and aggressive hateful video formats, profoundly impacting social dynamics and public sentiment. Existing detection methods typically rely on multimodal feature fusion, which blurs the distinct boundaries of modality-specific information. This leads to the feature dilution problem, where dominant benign modalities often overwhelm sparse, localized hateful cues. To address this, we propose SAGE, a novel framework that shifts the paradigm from blind feature mixing to decision-level arbitration.
 
 <p align="center">
   <img src="https://img.shields.io/badge/Task-Hateful%20Video%20Detection-blueviolet" />
