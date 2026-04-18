@@ -1,0 +1,73 @@
+device: "cuda"
+
+vision:
+  n_frames: 16
+  model_name: MCG-NJU/videomae-base
+  image_size: 224
+  hflip_p: 0.5      # RandomHorizontalFlip
+  scale: [0.8, 1.0] # RandomResizedCrop
+  mean: [0.485, 0.456, 0.406]
+  std: [0.229, 0.224, 0.225]
+  
+text:
+  model_name: cardiffnlp/twitter-xlm-roberta-base-sentiment-multilingual
+  max_length: 128
+
+audio:
+  sr: 16000
+  n_mfcc: 128
+  n_fft: 400
+  hop_length: 160
+  n_mels: 128
+  max_audio_len: 2048
+
+train:
+  epochs: 30
+  batch_size: 16
+  lr: 1e-4
+  optimizer: AdamW
+  weight_decay: 5e-5
+  warmup_steps: 3
+  save_path: ./sage_best_model.pth
+  train: True
+
+model:
+  text_dim: 768
+  audio_dim: 128
+  vision_dim: 768
+  mid_dim: 128
+  output_dim: 512
+  num_heads: 4
+  num_layers: 4
+  num_classes: 2
+  num_forward: 2
+  k: 2
+  dropout: 0.2
+
+loss:
+  lambda_expert: 0.5
+  lambda_gate: 0.05
+
+hatemm:
+  train_path: ./hatemm/splits/train.csv
+  val_path: ./hatemm//splits/val.csv
+  test_path: ./hatemm//splits/test.csv
+  trans_path: ./hatemm//annotation.json
+  frame_path: ./hatemm/frames
+  audio_path: ./hatemm/audios
+
+mhclip-bl:
+  train_path: ./mhclip-bl/splits/train.csv
+  val_path: ./mhclip-bl//splits/val.csv
+  test_path: ./mhclip-bl//splits/test.csv
+  trans_path: ./mhclip-bl//annotation.json
+  frame_path: ./mhclip-bl/frames
+  audio_path: ./mhclip-bl/audios
+
+mhclip-yt:
+  train_path: ./mhclip-yt/splits/train.csv
+  val_path: ./mhclip-yt//splits/val.csv
+  test_path: ./mhclip-yt//splits/test.csv
+  trans_path: ./mhclip-yt//annotation.json
+  frame_path: ./mhclip-yt/frames
+  audio_path: ./mhclip-yt/audios
