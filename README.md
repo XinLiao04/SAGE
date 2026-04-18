@@ -14,19 +14,19 @@
 ## 📁 Project Structure
 
 ```text
-- config                  # experiment configuration
-- model                   # model implementation
-  - CustomDataset.py      # custom dataset module
-  - CustomLoss.py         # loss function
-  - Runner.py             # model runner
-  - Sage.py               # SAGE model implementation
-  - Trainer.py            # model trainer
-  - utils.py              # training utils
-- preprocess              # data preprocessing
-  - audio-extract.py      # extract audios
-  - frame-extract.py      # extract video frames
-  - trans-extract.py      # extract transcripts
-- model/Main.py           # entry point
+- config/                  # experiment configuration
+- model/                   # model implementation
+  - CustomDataset.py       # custom dataset module
+  - CustomLoss.py          # loss function
+  - Runner.py              # model runner
+  - Sage.py                # SAGE model implementation
+  - Trainer.py             # model trainer
+  - utils.py               # training utils
+  - Main.py                # to start
+- preprocess/              # data preprocessing
+  - audio-extract.py       # extract audios
+  - frame-extract.py       # extract video frames
+  - trans-extract.py       # extract transcripts
 ```
 
 ---
@@ -55,6 +55,8 @@ It conceptualizes multimodal understanding as a dual process of collaboration an
 - First, SAGE instantiates decoupled experts to rigorously encode the core semantic representations of each modality, thereby preserving modality-specific information and preventing feature entanglement.
 - Subsequently, the Global Expert Deliberation mechanism facilitates cross-modal contextualization, reinforcing latent hateful cues while maintaining the stability of each expert's semantic profile.
 - Finally, at the instance level, SAGE adaptively evaluates and arbitrates the contribution of each expert, amplifying the most salient evidence while suppressing irrelevant noise to render the final verdict.
+
+Extensive experiments on HateMM and MultiHateClip benchmarks demonstrate that SAGE significantly outperforms state-of-the-art methods, achieving accuracy gains of 6.64% to 21.23% and macro-F1 score gains of 6.98% to 28.01%.
 
 ---
 
@@ -102,4 +104,4 @@ dataset = "mhclip-yt"                               # To Do
 python Main.py
 ```
 
-During training, the model with the highest Macro-F1 score on the validation set is automatically saved for inference.
+During training, the model with the best Macro-F1 score on the validation set is automatically saved for inference.
