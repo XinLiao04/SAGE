@@ -47,19 +47,11 @@ Access the complete dataset from: [MultiHateClip: A Multilingual Benchmark Datas
 
 ## 🧠 Method Overview
 <p align="center"> 
-  <img src="assets/method_overview.png" width="85%" /> 
+  <img src="images/framework.png" width="85%" /> 
 </p>
 
-SAGE (Synergistic Adaptive Gating of Experts) adaptively integrates heterogeneous modality experts by learning instance-aware gating weights conditioned on cross-modal interactions.
-
-Given text, audio, and visual representations extracted from pretrained encoders, SAGE:
-
-- Projects modality-specific features into a shared latent space  
-- Models cross-modal interactions among modality experts  
-- Learns adaptive gating weights for each input instance  
-- Produces a synergistic fused representation for final classification  
-
-This design enables SAGE to emphasize informative modalities while suppressing noisy or misleading signals.
+SAGE abandons traditional static fusion in favor of a dynamic, profile-centric paradigm that mimics human cognitive arbitration. 
+It conceptualizes multimodal understanding as a dual process of collaboration and competition among modality-aware experts. As illustrated in the Figure, the framework unfolds in three distinct modules: Profile Representation and Expert Initialization, Global Expert Deliberation, and Instance-Level Expert Tribunal. First, SAGE instantiates decoupled experts to rigorously encode the core semantic representations of each modality, thereby preserving modality-specific information and preventing feature entanglement. Subsequently, the Global Expert Deliberation mechanism facilitates cross-modal contextualization, reinforcing latent hateful cues while maintaining the stability of each expert's semantic profile. Finally, at the instance level, SAGE adaptively evaluates and arbitrates the contribution of each expert, amplifying the most salient evidence while suppressing irrelevant noise to render the final verdict.
 
 ---
 
